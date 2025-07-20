@@ -1,6 +1,326 @@
 :root {
+    /* Backgrounds */
+    --body: #F1FAEE;              /* Used for body background (not currently used) */
+    --body2: #457B9D;             /* Used for body background */
+    --section-BG: #A8DADC;        /* Used for .museum-info background */
+
+    /* Text Colors */
+    --head-img: #ffffff;          /* Used for hero heading */
+    --header-text: #1D3557;       /* Used for nav text, headings, image info text */
+    --header-text-hover: #000d1e; /* Used for nav hover */
+
+    /* Button Colors */
+    --buttons: #F6D55C;           /* Used for button background */
+    --button-hover: #457B9D;      /* Used for button hover */
+
+    /* Other */
+    --text-sec: #457B9D;          /* Unused */
+    --border: #A8DADC;            /* Used in footer and museum info borders */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body2); /* Primary background */
+}
+
+.navbar {
+    background-color: var(--header-text); /* Navbar background */
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-img h1 {
+    color: var(--head-img); /* Corrected: was using --header-text */
+    font-size: 25px;
+}
+
+.nav {
+    min-width: 65vw;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--head-img); /* Changed from --header-text for better contrast */
+}
+
+.nav ul li a:hover {
+    color: var(--header-text-hover);
+}
+
+.nav-button * {
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+}
+
+.nav-button *:hover {
+    background-color: var(--button-hover);
+}
+
+.hero-section {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    background-image: url("images/bannerImage/Banner1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--border);
+}
+
+.hero-info h1 {
+    color: var(--head-img);
+    text-align: center;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-button * {
+    height: auto;
+    padding: 10px 20px;
+    margin: 15px;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+}
+
+.hero-button *:hover {
+    background-color: var(--button-hover);
+}
+
+.museum-section-info {
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+}
+
+.museum-info {
+    background-color: var(--section-BG);
+    height: auto;
+    width: 90vw;
+    margin: 20px auto;
+    padding: 10px;
+    border: 2px solid var(--buttons);
+    border-radius: 5px;
+}
+
+.museum-name h1 {
+    color: var(--header-text);
+}
+
+.museum-img-sec {
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.museum-img-section {
+    margin: 10px;
+    padding: 10px;
+    border-right: 2px solid var(--header-text);
+}
+
+.img-info {
+    height: auto;
+    min-width: 200px;
+}
+
+.img-info p {
+    color: var(--header-text);
+}
+
+.img-info img {
+    height: 200px;
+}
+
+.footer {
+    background-color: var(--header-text);
+    color: var(--body); /* Changed from hex to var */
+    padding: 40px 20px 10px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 220px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: var(--buttons);
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section li {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: var(--body);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: var(--buttons);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 13px;
+    color: var(--border);
+}
+
+
+
+/* ---------- MEDIA QUERIES ---------- */
+
+/* MOBILE (≤450px) */
+@media screen and (max-width: 450px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    .nav ul li a {
+        margin: 8px 0;
+    }
+
+    .hero-info h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-button {
+        flex-direction: column;
+    }
+
+    .museum-img-section {
+        border-right: none;
+        border-bottom: 1px solid var(--header-text);
+    }
+
+    .museum-name h1 {
+        font-size: 1.4rem;
+    }
+}
+
+/* TABLET (≤780px) */
+@media screen and (max-width: 780px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-info h1 {
+        font-size: 2rem;
+    }
+
+    .hero-button {
+        flex-wrap: wrap;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 4K MONITOR (≥2560px) */
+@media screen and (min-width: 2560px) {
+    body {
+        font-size: 20px;
+    }
+
+    .hero-info h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-button * {
+        font-size: 22px;
+        padding: 15px 30px;
+    }
+
+    .museum-img-section {
+        min-width: 350px;
+    }
+
+    .img-info img {
+        height: 300px;
+    }
+
+    .footer-section p,
+    .footer-section li {
+        font-size: 18px;
+    }
+
+    .footer-bottom {
+        font-size: 16px;
+    }
+}
+
+
+
+/* :root {
     --body: #F1FAEE;
     --body2: #457B9D;
+    --head-img: #fff;
     --header-text: #1D3557;
     --header-text-hover: #000d1e;
     --section-BG: #A8DADC;
@@ -21,6 +341,7 @@ body {
 }
 
 .navbar {
+    background-color: var(--header-text);
     height: 80px;
     display: flex;
     justify-content: space-evenly;
@@ -73,9 +394,8 @@ body {
     width: 90vw;
     height: 90vh;
     margin: auto;
-    /* margin-top: 15px; */
 
-    background-image: url("images/bannerImage/Banneredit.jpg");
+    background-image: url("images/bannerImage/Banner1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center, center;
@@ -84,6 +404,10 @@ body {
     justify-content: center;
     align-items: center;
     border: 2px solid;
+}
+
+.hero-info h1 {
+    color: var(--head-img);
 }
 
 .hero-button {
@@ -136,7 +460,6 @@ body {
 .museum-img-section {
     margin: 10px;
     padding: 10px;
-    /* border: 2px solid; */
     border-right: 2px solid var(--header-text);
 }
 
@@ -152,8 +475,6 @@ body {
 .img-info img {
     height: 200px;
 }
-
-
 
 .footer {
     background-color: #1D3557;
@@ -208,4 +529,4 @@ body {
     padding-top: 15px;
     font-size: 13px;
     color: #A8DADC;
-}
+} */
