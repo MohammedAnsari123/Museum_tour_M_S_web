@@ -1,0 +1,154 @@
+:root {
+    --body: #F1FAEE;
+    --body2: #457B9D;
+    --header-text: #1D3557;
+    --header-text-hover: #000d1e;
+    --section-BG: #A8DADC;
+    --buttons: #F6D55C;
+    --button-hover: #457B9D;
+    --text-sec: #457B9D;
+    --border: #A8DADC;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--body2);
+}
+
+.navbar {
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-img h1 {
+    color: var(--header-text);
+    font-size: 25px;
+}
+
+.nav {
+    min-width: 65vw;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav ul li {
+    list-style: none;
+}
+
+.nav ul li a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--header-text);
+}
+
+.nav ul li a:hover {
+    color: var(--header-text-hover);
+}
+
+.nav-button * {
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+}
+
+.nav-button *:hover {
+    background-color: var(--button-hover);
+}
+
+.hero-section {
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    /* margin-top: 15px; */
+
+    background-image: url("images/bannerImage/Banneredit.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center, center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+}
+
+.hero-button {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-button * {
+    height: auto;
+    padding: 10px 20px;
+    margin: 15px;
+    border-radius: 5px;
+    background-color: var(--buttons);
+    cursor: pointer;
+}
+
+.hero-button *:hover {
+    background-color: var(--button-hover);
+}
+
+.museum-section-info {
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.museum-info {
+    background-color: var(--section-BG);
+    height: auto;
+    width: 90vw;
+    margin: 20px auto;
+    padding: 10px;
+
+    border: 2px solid var(--buttons);
+    border-radius: 5px;
+}
+
+.museum-name h1 {
+    color: var(--header-text);
+}
+
+.museum-img-sec {
+    display: flex;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.museum-img-section {
+    margin: 10px;
+    padding: 10px;
+    /* border: 2px solid; */
+    border-right: 2px solid var(--header-text);
+}
+
+.img-info {
+    height: auto;
+    min-width: 200px;
+}
+
+.img-info p{
+    color: var(--header-text);
+}
+
+.img-info img {
+    height: 200px;
+}
