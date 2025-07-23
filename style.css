@@ -1,21 +1,21 @@
 :root {
     /* Backgrounds */
-    --body: #F1FAEE;              /* Used for body background (not currently used) */
-    --body2: #457B9D;             /* Used for body background */
-    --section-BG: #A8DADC;        /* Used for .museum-info background */
+    --body: #F1FAEE;
+    --body2: #457B9D;
+    --section-BG: #A8DADC;
 
     /* Text Colors */
-    --head-img: #ffffff;          /* Used for hero heading */
-    --header-text: #1D3557;       /* Used for nav text, headings, image info text */
-    --header-text-hover: #000d1e; /* Used for nav hover */
+    --head-img: #ffffff;
+    --header-text: #1D3557;
+    --header-text-hover: #000d1e;
 
     /* Button Colors */
-    --buttons: #F6D55C;           /* Used for button background */
-    --button-hover: #457B9D;      /* Used for button hover */
+    --buttons: #F6D55C;
+    --button-hover: #FFD166;
 
     /* Other */
-    --text-sec: #457B9D;          /* Unused */
-    --border: #A8DADC;            /* Used in footer and museum info borders */
+    --text-sec: #457B9D;
+    --border: #A8DADC;
 }
 
 * {
@@ -25,162 +25,168 @@
 }
 
 body {
-    background-color: var(--body2); /* Primary background */
+    background-color: var(--body2);
+    font-family: 'Segoe UI', sans-serif;
 }
 
+/* Navbar */
 .navbar {
-    background-color: var(--header-text); /* Navbar background */
+    background-color: var(--header-text);
     height: 80px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-img h1 {
-    color: var(--head-img); /* Corrected: was using --header-text */
-    font-size: 25px;
-}
-
-.nav {
-    min-width: 65vw;
+    color: var(--head-img);
+    font-size: 28px;
 }
 
 .nav ul {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav ul li {
     list-style: none;
+    gap: 20px;
+    padding-left: 0;
 }
 
 .nav ul li a {
-    margin: 0 20px;
     text-decoration: none;
-    color: var(--head-img); /* Changed from --header-text for better contrast */
+    color: var(--head-img);
+    transition: color 0.3s;
 }
 
 .nav ul li a:hover {
     color: var(--header-text-hover);
 }
 
-.nav-button * {
-    height: auto;
-    padding: 10px 20px;
-    border-radius: 5px;
+.nav-button input {
     background-color: var(--buttons);
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.nav-button *:hover {
+.nav-button input:hover {
     background-color: var(--button-hover);
 }
 
+/* Hero Section */
 .hero-section {
     width: 90vw;
     height: 90vh;
-    margin: auto;
+    margin: 20px auto;
     background-image: url("images/bannerImage/Banner1.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
 }
 
 .hero-info h1 {
     color: var(--head-img);
-    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 .hero-button {
     display: flex;
+    gap: 15px;
     justify-content: center;
+    margin-top: 20px;
 }
 
-.hero-button * {
-    height: auto;
-    padding: 10px 20px;
-    margin: 15px;
-    border-radius: 5px;
+.hero-button input {
     background-color: var(--buttons);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.hero-button *:hover {
+.hero-button input:hover {
     background-color: var(--button-hover);
 }
 
+/* Museum Info Section */
 .museum-section-info {
-    height: auto;
-    padding: 20px;
-    margin: 20px;
+    padding: 30px 20px;
 }
 
 .museum-info {
     background-color: var(--section-BG);
-    height: auto;
-    width: 90vw;
     margin: 20px auto;
-    padding: 10px;
+    padding: 20px;
     border: 2px solid var(--buttons);
-    border-radius: 5px;
+    border-radius: 8px;
+    width: 95%;
 }
 
 .museum-name h1 {
     color: var(--header-text);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
 }
 
 .museum-img-sec {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
-.museum-img-section {
-    margin: 10px;
-    padding: 10px;
-    border-right: 2px solid var(--header-text);
+.museum-img-sec::-webkit-scrollbar {
+    display: none;
 }
 
-.img-info {
-    height: auto;
-    min-width: 200px;
+.museum-img-section {
+    flex: 0 0 auto;
+    margin-right: 15px;
+    padding: 10px;
+    border-right: 2px solid var(--header-text);
+    min-width: 220px;
+    background: #ffffff;
+    border-radius: 6px;
+}
+
+.img-info img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .img-info p {
     color: var(--header-text);
+    font-size: 0.9rem;
 }
 
-.img-info img {
-    height: 200px;
-}
-
+/* Footer */
 .footer {
     background-color: var(--header-text);
-    color: var(--body); /* Changed from hex to var */
+    color: var(--body);
     padding: 40px 20px 10px;
-    font-family: 'Segoe UI', sans-serif;
 }
 
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    gap: 30px;
     border-bottom: 1px solid var(--border);
     padding-bottom: 20px;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 20px;
-    min-width: 220px;
 }
 
 .footer-section h3,
@@ -217,24 +223,21 @@ body {
     color: var(--border);
 }
 
-
-
-/* ---------- MEDIA QUERIES ---------- */
-
-/* MOBILE (≤450px) */
-@media screen and (max-width: 450px) {
+/* MEDIA QUERIES */
+@media screen and (max-width: 768px) {
     .navbar {
         flex-direction: column;
-        height: auto;
-        padding: 15px;
+        align-items: center;
+        gap: 10px;
     }
 
     .nav ul {
         flex-direction: column;
+        align-items: center;
     }
 
-    .nav ul li a {
-        margin: 8px 0;
+    .nav-button {
+        margin-top: 10px;
     }
 
     .hero-info h1 {
@@ -245,44 +248,11 @@ body {
         flex-direction: column;
     }
 
-    .museum-img-section {
-        border-right: none;
-        border-bottom: 1px solid var(--header-text);
-    }
-
     .museum-name h1 {
         font-size: 1.4rem;
     }
 }
 
-/* TABLET (≤780px) */
-@media screen and (max-width: 780px) {
-    .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-
-    .nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .hero-info h1 {
-        font-size: 2rem;
-    }
-
-    .hero-button {
-        flex-wrap: wrap;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-/* 4K MONITOR (≥2560px) */
 @media screen and (min-width: 2560px) {
     body {
         font-size: 20px;
@@ -292,7 +262,7 @@ body {
         font-size: 3.5rem;
     }
 
-    .hero-button * {
+    .hero-button input {
         font-size: 22px;
         padding: 15px 30px;
     }
@@ -314,219 +284,3 @@ body {
         font-size: 16px;
     }
 }
-
-
-
-/* :root {
-    --body: #F1FAEE;
-    --body2: #457B9D;
-    --head-img: #fff;
-    --header-text: #1D3557;
-    --header-text-hover: #000d1e;
-    --section-BG: #A8DADC;
-    --buttons: #F6D55C;
-    --button-hover: #457B9D;
-    --text-sec: #457B9D;
-    --border: #A8DADC;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--body2);
-}
-
-.navbar {
-    background-color: var(--header-text);
-    height: 80px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 20px;
-}
-
-.nav-img h1 {
-    color: var(--header-text);
-    font-size: 25px;
-}
-
-.nav {
-    min-width: 65vw;
-}
-
-.nav ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav ul li {
-    list-style: none;
-}
-
-.nav ul li a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: var(--header-text);
-}
-
-.nav ul li a:hover {
-    color: var(--header-text-hover);
-}
-
-.nav-button * {
-    height: auto;
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: var(--buttons);
-    cursor: pointer;
-}
-
-.nav-button *:hover {
-    background-color: var(--button-hover);
-}
-
-.hero-section {
-    width: 90vw;
-    height: 90vh;
-    margin: auto;
-
-    background-image: url("images/bannerImage/Banner1.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center, center;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid;
-}
-
-.hero-info h1 {
-    color: var(--head-img);
-}
-
-.hero-button {
-    display: flex;
-    justify-content: center;
-}
-
-.hero-button * {
-    height: auto;
-    padding: 10px 20px;
-    margin: 15px;
-    border-radius: 5px;
-    background-color: var(--buttons);
-    cursor: pointer;
-}
-
-.hero-button *:hover {
-    background-color: var(--button-hover);
-}
-
-.museum-section-info {
-    height: auto;
-    padding: 20px;
-    margin: 20px;
-
-}
-
-.museum-info {
-    background-color: var(--section-BG);
-    height: auto;
-    width: 90vw;
-    margin: 20px auto;
-    padding: 10px;
-
-    border: 2px solid var(--buttons);
-    border-radius: 5px;
-}
-
-.museum-name h1 {
-    color: var(--header-text);
-}
-
-.museum-img-sec {
-    display: flex;
-    overflow: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.museum-img-section {
-    margin: 10px;
-    padding: 10px;
-    border-right: 2px solid var(--header-text);
-}
-
-.img-info {
-    height: auto;
-    min-width: 200px;
-}
-
-.img-info p {
-    color: var(--header-text);
-}
-
-.img-info img {
-    height: 200px;
-}
-
-.footer {
-    background-color: #1D3557;
-    color: #F1FAEE;
-    padding: 40px 20px 10px;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    border-bottom: 1px solid #A8DADC;
-    padding-bottom: 20px;
-}
-
-.footer-section {
-    flex: 1;
-    margin: 20px;
-    min-width: 220px;
-}
-
-.footer-section h3,
-.footer-section h4 {
-    color: #F6D55C;
-    margin-bottom: 15px;
-}
-
-.footer-section p,
-.footer-section li {
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li a {
-    color: #F1FAEE;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: #F6D55C;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 15px;
-    font-size: 13px;
-    color: #A8DADC;
-} */

@@ -1,0 +1,257 @@
+/* =============================
+   Root Variables
+============================= */
+:root {
+  --primary-color: #0f172a;
+  --secondary-color: #1e293b;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --light-text: #f1f5f9;
+  --muted-text: #94a3b8;
+  --card-bg: #1e293b;
+  --hover-bg: #334155;
+  --footer-bg: #0f172a;
+  --border-color: #334155;
+}
+
+/* =============================
+   Reset & Base
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+/* =============================
+   Navbar
+============================= */
+.navbar {
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-img h1 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav li a {
+  color: var(--light-text);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 5px;
+}
+
+.nav li a:hover {
+  background-color: var(--hover-bg);
+  color: var(--accent-color);
+}
+
+/* =============================
+   Dashboard Section
+============================= */
+.dashboard-section {
+  padding: 2rem;
+}
+
+.dashboard-section h2 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: var(--accent-color);
+}
+
+/* Cards */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-left: 4px solid var(--accent-color);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--hover-bg);
+}
+
+.dashboard-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--light-text);
+}
+
+.dashboard-card p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* Actions */
+.dashboard-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.dashboard-actions button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.dashboard-actions button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* =============================
+   Footer
+============================= */
+.footer {
+  background-color: var(--footer-bg);
+  padding: 2rem;
+  color: var(--muted-text);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-section h4 {
+  color: var(--light-text);
+  margin-bottom: 0.8rem;
+}
+
+.footer-section p,
+.footer-section ul {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: var(--muted-text);
+  display: block;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--light-text);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  color: var(--muted-text);
+}
+
+/* =============================
+   Responsive
+============================= */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dashboard-actions {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav li a {
+    padding: 0.5rem;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-card p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 2560px) {
+  .dashboard-card {
+    padding: 2.5rem;
+  }
+
+  .dashboard-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard-card p {
+    font-size: 3rem;
+  }
+
+  .dashboard-section h2 {
+    font-size: 3rem;
+  }
+
+  .dashboard-actions button {
+    font-size: 1.2rem;
+    padding: 1rem 1.5rem;
+  }
+}
